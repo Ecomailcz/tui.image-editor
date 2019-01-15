@@ -19,6 +19,7 @@ const FILTER_OPTIONS = [
     'remove-white',
     'gradient-transparency',
     'brightness',
+    'contrast',
     'noise',
     'pixelate',
     'color-filter',
@@ -71,6 +72,7 @@ class Filter extends Submenu {
         this._els.pixelateRange.on('change', () => changeRangeValue('pixelate'));
         this._els.noiseRange.on('change', () => changeRangeValue('noise'));
         this._els.brightnessRange.on('change', () => changeRangeValue('brightness'));
+        this._els.contrastRange.on('change', () => changeRangeValue('contrast'));
         this._els.blendType.addEventListener('change', () => changeRangeValue('blend'));
         this._els.filterBlendColor.on('change', () => changeRangeValue('blend'));
         this._els.filterMultiplyColor.on('change', () => changeRangeValue('multiply'));
@@ -131,6 +133,9 @@ class Filter extends Submenu {
             case 'brightness':
                 option.brightness = toInteger(this._els.brightnessRange.value);
                 break;
+            case 'contrast':
+                option.contrast = toInteger(this._els.contrastRange.value);
+                break;
             case 'blend':
                 option.color = this._els.filterBlendColor.color;
                 option.mode = this._els.blendType.value;
@@ -171,6 +176,10 @@ class Filter extends Submenu {
             brightnessRange: new Range(
                 selector('#tie-brightness-range'),
                 FILTER_RANGE.brightnessRange
+            ),
+            contrastRange: new Range(
+                selector('#tie-contrast-range'),
+                FILTER_RANGE.contrastRange
             ),
             noiseRange: new Range(
                 selector('#tie-noise-range'),

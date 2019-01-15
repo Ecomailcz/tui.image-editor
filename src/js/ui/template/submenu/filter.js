@@ -84,6 +84,15 @@ export default ({locale}) => (`
             </div>
             <div class="tui-image-editor-checkbox-group tui-image-editor-disabled">
                 <div class="tui-image-editor-checkbox">
+                    <input type="checkbox" id="tie-contrast">
+                    <label for="tie-contrast">${locale.localize('Contrast')}</label>
+                </div>
+                <div class="tui-image-editor-range-wrap short">
+                    <div id="tie-contrast-range"></div>
+                </div>
+            </div>
+            <div class="tui-image-editor-checkbox-group tui-image-editor-disabled">
+                <div class="tui-image-editor-checkbox">
                     <input type="checkbox" id="tie-noise">
                     <label for="tie-noise">${locale.localize('Noise')}</label>
                 </div>

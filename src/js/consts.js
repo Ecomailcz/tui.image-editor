@@ -202,6 +202,11 @@ module.exports = {
             max: 255,
             value: 100
         },
+        contrastRange: {
+            min: -255,
+            max: 255,
+            value: 100
+        },
         noiseRange: {
             min: 0,
             max: 1000,
